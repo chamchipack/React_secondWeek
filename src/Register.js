@@ -6,6 +6,9 @@ import {useDispatch} from 'react-redux';
 import {addDictionary} from './modules/widget'
 
 function Register(){
+    const dispatch = useDispatch();
+    const history = useHistory();
+
     const [getInputs, setInputs] = useState({
         word : '',
         pinyin : '',
@@ -23,36 +26,33 @@ function Register(){
     }
     console.log(getInputs)
     
-    const dispatch = useDispatch();
-    const history = useHistory();
     const createDictionary = () =>{
         dispatch(addDictionary(getInputs));
     }
-    
 
     return(
         <div className='reg-background'>
             <div className='reg-inner'>
                 <h2>단어 추가하기</h2>
                     <div className='input-div'>
-                        <label for="input-word"><p>단어</p></label>
-                        <input name='word' onChange={onChange} value={word}  className='input-value' id='input-word'></input>
+                        <h3>단어</h3>
+                        <input name='word' onChange={onChange} value={word}  className='input-value' />
                     </div>
                     <div className='input-div'>
-                        <label for="input-pinyin"><p>병음</p></label>
-                        <input name='pinyin' onChange={onChange} value={pinyin} className='input-value' id='input-pinyin'></input>
+                        <h3>병음</h3>
+                        <input name='pinyin' onChange={onChange} value={pinyin} className='input-value' />
                     </div>
                     <div className='input-div'>
-                        <label for="input-mean"><p>의미</p></label>
-                        <input name='mean' onChange={onChange} value={mean}  className='input-value' id='input-mean'></input>
+                        <h3>의미</h3>
+                        <input name='mean' onChange={onChange} value={mean}  className='input-value' />
                     </div>
                     <div className='input-div'>
-                        <label for="input-exam"><p>예문</p></label>
-                        <input name='example' onChange={onChange} value={example}  className='input-value' id='input-exam'></input>
+                        <h3>예문</h3>
+                        <input name='example' onChange={onChange} value={example}  className='input-value' />
                     </div>
                     <div className='input-div'>
-                        <label for="input-exam-mean"><p>해석</p></label>
-                        <input name='exammean' onChange={onChange} value={exammean}  className='input-value' id='input-exam-mean'></input>
+                        <h3>예문의미</h3>
+                        <input name='exammean' onChange={onChange} value={exammean}  className='input-value' />
                     </div>
                     <button onClick={()=> { history.goBack(); createDictionary()}} className='submit-btn' type='submit'>저장하기</button>
             </div>

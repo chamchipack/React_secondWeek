@@ -3,6 +3,7 @@ import './App.css';
 import {Route, Link} from 'react-router-dom';
 import Main from './Main';
 import Register from './Register'
+import Edit from './Edit'
 import { useEffect } from 'react';
 
 
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route exact path='/register'>
             <Register></Register>
+          </Route>
+          <Route exact path='/edit/:num'>
+            <Edit></Edit>
           </Route>
     </div>
   );
