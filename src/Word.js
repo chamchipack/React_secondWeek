@@ -7,7 +7,7 @@ import { useHistory, Link } from 'react-router-dom';
 function Word(props){
     let history = useHistory();
     let [getCheck, setCheck] = useState(true);
-
+    let setCount = props.setCount
     let data = props.data
     let idx = props.idx
 
@@ -25,7 +25,7 @@ function Word(props){
                     <p className='title left'>{data[idx].word}</p>
                     <div className='left icons'>
                         <FaCheckDouble onClick={()=>{changeBool()}} className='icon' />
-                        <FaPenSquare onClick={()=>{history.push(`/edit/${idx}`)}} className='icon' data={data} idx={idx}/>
+                        <FaPenSquare onClick={()=>{history.push(`/edit/${idx}`); setCount(idx)}} className='icon'/>
                         <FaRegWindowClose className='icon' />
                     </div>
                 </div>

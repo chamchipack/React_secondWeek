@@ -8,7 +8,7 @@ import { collection, getDoc, getDocs, addDoc} from 'firebase/firestore';
 import {db} from './firebase';
 import { useDispatch, useSelector } from 'react-redux';
 
-function Main(){
+function Main(props){
     const dispatch = useDispatch();
     useEffect(()=>{
         dispatch(loadDictionary());
@@ -24,7 +24,7 @@ function Main(){
                 { // 단어 컴포넌트들을 n개로 반복 시키는 구간
                     data.map((e,idx)=>{
                         return(
-                            <Word data={data} idx={idx}></Word>
+                            <Word data={data} idx={idx} setCount={props.setCount}></Word>
                         )
                     })
                 }

@@ -2,21 +2,24 @@ import {react, useEffect, useRef, useState} from 'react';
 import {useHistory} from 'react-router-dom'
 import { collection, getDoc, getDocs, addDoc} from 'firebase/firestore';
 import {db} from './firebase';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {addDictionary} from './modules/widget'
 
 function Register(){
+    const data = useSelector((state)=> state.widget.list)
     const dispatch = useDispatch();
     const history = useHistory();
+    console.log(data.length)
 
     const [getInputs, setInputs] = useState({
         word : '',
         pinyin : '',
         mean : '',
         example : '',
-        exammean : ''
+        exammean : '',
+        num : data.length +1
     });
-    const {word, pinyin, mean, example, exammean} = getInputs;
+    const {word, pinyin, mean, example, exammean, num} = getInputs;
     const onChange = (e)=>{
         const {name, value} = e.target;
         setInputs({

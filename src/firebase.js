@@ -7,13 +7,13 @@ import { getFirestore } from "firebase/firestore";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCPZcdiUCD8BUrXOCJinFMr_mPmgk5xFNY",
-  authDomain: "sparta-react2.firebaseapp.com",
-  projectId: "sparta-react2",
-  storageBucket: "sparta-react2.appspot.com",
-  messagingSenderId: "344941962721",
-  appId: "1:344941962721:web:7944ac6381de0ce1929ea0",
-  measurementId: "G-5D0MMZD6VL"
+  apiKey: "AIzaSyCo-gMs3cn70s5zhmVCRiE4bIBXq0G-Mlo",
+  authDomain: "sparta-react3.firebaseapp.com",
+  projectId: "sparta-react3",
+  storageBucket: "sparta-react3.appspot.com",
+  messagingSenderId: "404768523121",
+  appId: "1:404768523121:web:892a852d3827a1f742ecd0",
+  measurementId: "G-CY71QZDXCW"
 };
 
 // Initialize Firebase
@@ -32,4 +32,14 @@ export const db = getFirestore();
 //   messagingSenderId: "923369430698",
 //   appId: "1:923369430698:web:b220b4fa15be8cf45f3ad3",
 //   measurementId: "G-504E55XBVY"
+// };
+
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCPZcdiUCD8BUrXOCJinFMr_mPmgk5xFNY",
+//   authDomain: "sparta-react2.firebaseapp.com",
+//   projectId: "sparta-react2",
+//   storageBucket: "sparta-react2.appspot.com",
+//   messagingSenderId: "344941962721",
+//   appId: "1:344941962721:web:7944ac6381de0ce1929ea0",
+//   measurementId: "G-5D0MMZD6VL"
 // };
