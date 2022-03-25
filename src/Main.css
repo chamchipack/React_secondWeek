@@ -1,0 +1,100 @@
+.main-background{
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+    padding: 20px;
+}
+.main-inner{
+    margin: 0 auto;
+    width: 100%;
+    height: 80%;
+    padding-left: 9%;
+}
+/* Word.js section */
+.wordCom{
+    width: 25%;
+    height: 200px;
+    border: 3px solid rgb(160, 211, 160);
+    border-radius: 20px;
+    padding-left: 20px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 25px;
+  }
+  .reg-circle{
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      background-color: black;
+      border-radius: 50%;
+      right: 5%;
+  }
+.others{
+      width: 100%;
+      height: 100%;
+  }
+.left{
+    display: inline-block;
+}
+.icons{
+    float: right;
+    margin-top: 17px;
+    margin-right: 20px;
+}
+.icon{
+    margin-right: 15px;
+    font-size: 20px;
+}
+/* Register.js section */
+  .reg-background{
+      margin: 0 auto;
+      width: 30%;
+      height: 70%;
+      padding: 50px;
+  }
+  .reg-inner{
+    margin: 0 auto;
+    width: 80%;
+    height: 80%;
+    text-align: center;
+  }
+  .input-value{
+      border: none;
+    border-bottom: 3px solid rgb(158, 223, 158);
+    border-radius: 2px;
+    width: 400px;
+    height: 25px;
+  }
+  .input-div{
+      text-align: center;
+      width: 100%;
+      height: 80px;
+  }
+  label p {
+      text-align: left;
+      margin-left: 10%;
+  }
+  .submit-btn{
+      margin-top: 30px;
+      border: none;
+      border-radius: 10px;
+      background-color: green;
+      color: white;
+      width: 150px;
+      height: 40px;
+      font-size: 16px;
+  }
+
+  @media screen and (max-width: 1200px){
+      .wordCom{
+          width: 300px;
+          height: 200px;
+      }
+      
+  }
+  @media screen and (max-width : 864px) {
+      .wordCom{
+          width: 500px;
+          height: 200px;
+      }
+  }
