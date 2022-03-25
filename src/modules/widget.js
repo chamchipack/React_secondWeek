@@ -1,5 +1,7 @@
+import {collection, doc, getDocs, addDoc, updateDoc, deleteDoc} from 'firebase/firestore';
+import {db} from '../firebase';
 // Actions
-const LOAD = 'my-app/widgets/LOAD';
+const LOAD = 'widget/LOAD';
 const CREATE = 'widget/CREATE';
 const UPDATE = 'my-app/widgets/UPDATE';
 const REMOVE = 'my-app/widgets/REMOVE';
@@ -10,8 +12,8 @@ const initialState = {
 }
 
 // Action Creators 액션생성함수
-export function loadWidgets() {
-    return { type: LOAD };
+export function loadWidgets(dictionary) {
+    return { type: LOAD, dictionary };
 }
 
 export function createWidget(widget) {
@@ -27,6 +29,26 @@ export function removeWidget(widget) {
     return { type: REMOVE, widget };
 }
 
+//middlewares
+
+export const loadDictionary = () =>{
+    return async function (dispatch){
+        const dic_data = await getDocs(collection(db, 'dictionary'));
+        let dic_list = [];
+        dic_data.forEach((e)=>{
+            // dic_list = [...dic_list, {...e.data()}] or dic_list.push({...e.data()})
+            dic_list.push({...e.data()})
+        });
+        dispatch(loadWidgets(dic_list))
+    }
+}
+
+export const addDictionary = (dic) =>{
+    return async function(dispatch){
+        const docRef = await addDoc(collection(db, 'dictionary'),dic);
+        console.log(docRef)
+    }
+}
 // side effects, only as applicable
 // e.g. thunks, epics, etc
 // export function getWidget() {
@@ -36,10 +58,9 @@ export function removeWidget(widget) {
 // Reducer
 export default function reducer(state = initialState, action = {}) { // state = {} : 디폴트값
     switch (action.type) {
-        case "widget/CREATE" : {
-            const new_widget_list = [...state.list, action.widget];
+        case "widget/LOAD" : {
             return {
-                list : new_widget_list
+                list : action.dictionary
             }
         }
         default: return state;

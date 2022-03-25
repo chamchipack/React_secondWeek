@@ -1,16 +1,30 @@
-import {react} from 'react';
+import {react, useEffect} from 'react';
 import Word from './Word'
 import './Main.css'
 import {Route, Link} from 'react-router-dom';
+import { loadDictionary } from './modules/widget';
+
+import { collection, getDoc, getDocs, addDoc} from 'firebase/firestore';
+import {db} from './firebase';
+import { useDispatch, useSelector } from 'react-redux';
 
 function Main(){
+    const dispatch = useDispatch();
+    useEffect(()=>{
+        dispatch(loadDictionary());
+      })
+    
+      const data = useSelector((state)=> state.widget.list)
+
+      
+      
     return(
         <div className='main-background'>
             <div className='main-inner'>
-                {
-                    Array.from({length:5},(e,i)=>{
+                { // 단어 컴포넌트들을 n개로 반복 시키는 구간
+                    data.map((e,idx)=>{
                         return(
-                            <Word></Word>
+                            <Word data={data} idx={idx}></Word>
                         )
                     })
                 }
@@ -20,3 +34,4 @@ function Main(){
     )
 }
 export default Main
+

@@ -3,8 +3,12 @@ import './App.css';
 import {Route, Link} from 'react-router-dom';
 import Main from './Main';
 import Register from './Register'
+import { useEffect } from 'react';
+
+
 
 function App() {
+  
   return (
     <div className="background">
       <div className='background-title'>
