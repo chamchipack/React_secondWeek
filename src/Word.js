@@ -13,7 +13,6 @@ function Word(props){
     let setCount = props.setCount
     let data = props.data
     let idx = props.idx
-
     let changeBool = ()=>{
         if(getCheck == true){
             setCheck(false)
@@ -22,7 +21,8 @@ function Word(props){
         }
     }
     const deleteWord = ()=>{
-        dispatch(deleteDictionary(props.getNowid))
+        prompt()
+        dispatch(deleteDictionary())
     }
     return(
         <div className='wordCom' style={{backgroundColor: getCheck == false ? 'green' : 'white'}}>

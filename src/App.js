@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 function App() {
   let [getCount, setCount] = useState();
   let [getNowid, setNowid] = useState();
+  console.log(getCount)
 
   return (
     <div className="background">
