@@ -10,20 +10,21 @@ import { useEffect, useState } from 'react';
 
 function App() {
   let [getCount, setCount] = useState();
-  
+  let [getNowid, setNowid] = useState();
+
   return (
     <div className="background">
       <div className='background-title'>
         <h3 className='head-title'>중국어 단어장</h3>
       </div>
           <Route exact path='/'>
-            <Main setCount={setCount}></Main>
+            <Main setCount={setCount} getNowid={getNowid}></Main>
           </Route>
           <Route exact path='/register'>
             <Register></Register>
           </Route>
           <Route exact path='/edit/:num'>
-            <Edit getCount={getCount}></Edit>
+            <Edit getCount={getCount} setNowid={setNowid}></Edit>
           </Route>
     </div>
   );

@@ -7,13 +7,13 @@ import { getFirestore } from "firebase/firestore";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCo-gMs3cn70s5zhmVCRiE4bIBXq0G-Mlo",
-  authDomain: "sparta-react3.firebaseapp.com",
-  projectId: "sparta-react3",
-  storageBucket: "sparta-react3.appspot.com",
-  messagingSenderId: "404768523121",
-  appId: "1:404768523121:web:892a852d3827a1f742ecd0",
-  measurementId: "G-CY71QZDXCW"
+  apiKey: "AIzaSyBteH8IoE_zQ61cLJ5GbhM5gbSEl_UNzWc",
+  authDomain: "sparta5-a6e8a.firebaseapp.com",
+  projectId: "sparta5-a6e8a",
+  storageBucket: "sparta5-a6e8a.appspot.com",
+  messagingSenderId: "629150300014",
+  appId: "1:629150300014:web:613da9ea85968e9764737f",
+  measurementId: "G-XDHDVV8RRM"
 };
 
 // Initialize Firebase
@@ -34,6 +34,7 @@ export const db = getFirestore();
 //   measurementId: "G-504E55XBVY"
 // };
 
+// 2
 // const firebaseConfig = {
 //   apiKey: "AIzaSyCPZcdiUCD8BUrXOCJinFMr_mPmgk5xFNY",
 //   authDomain: "sparta-react2.firebaseapp.com",
@@ -42,4 +43,26 @@ export const db = getFirestore();
 //   messagingSenderId: "344941962721",
 //   appId: "1:344941962721:web:7944ac6381de0ce1929ea0",
 //   measurementId: "G-5D0MMZD6VL"
+// };
+
+//3
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCo-gMs3cn70s5zhmVCRiE4bIBXq0G-Mlo",
+//   authDomain: "sparta-react3.firebaseapp.com",
+//   projectId: "sparta-react3",
+//   storageBucket: "sparta-react3.appspot.com",
+//   messagingSenderId: "404768523121",
+//   appId: "1:404768523121:web:892a852d3827a1f742ecd0",
+//   measurementId: "G-CY71QZDXCW"
+// };
+
+//4
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBA2JUNhNLDNbUZyXPqYo6b215YnYrn-vA",
+//   authDomain: "sparta-react4-2ab1a.firebaseapp.com",
+//   projectId: "sparta-react4-2ab1a",
+//   storageBucket: "sparta-react4-2ab1a.appspot.com",
+//   messagingSenderId: "177362518734",
+//   appId: "1:177362518734:web:3182ba230c66e3b6c1c69f",
+//   measurementId: "G-J801BRCYDQ"
 // };

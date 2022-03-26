@@ -24,7 +24,7 @@ function Main(props){
                 { // 단어 컴포넌트들을 n개로 반복 시키는 구간
                     data.map((e,idx)=>{
                         return(
-                            <Word data={data} idx={idx} setCount={props.setCount}></Word>
+                            <Word data={data} idx={idx} setCount={props.setCount} getNowid={props.getNowid}></Word>
                         )
                     })
                 }

@@ -1,30 +1,38 @@
 import { react, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import {updateDictionary} from './modules/widget'
 
 function Edit(props){
+    let setNowid = props.setNowid;
+    let dispatch = useDispatch();
     let history = useHistory();
     const data = useSelector((state)=> state.widget.list)
-    const dic_data = data[props.getCount]
     console.log(data)
+    const dic_data = data[props.getCount]
 
     const [getInputs, setInputs] = useState({
+        id : dic_data.id,
         word : dic_data.word,
         pinyin : dic_data.pinyin,
         mean : dic_data.mean,
         example : dic_data.example,
         exammean : dic_data.exammean,
-        num : ''
+        num : dic_data.num
     });
-    const {word, pinyin, mean, example, exammean, num} = getInputs;
+    const {word, pinyin, mean, example, exammean, num, id} = getInputs;
     const onChange = (e)=>{
         const {name, value} = e.target;
         setInputs({
             ...getInputs,
             [name]: value
         })
+        setNowid(dic_data.id)
     }
-
+    const updateDic = ()=>{
+        dispatch(updateDictionary(getInputs))
+    }
+    console.log(getInputs)
     return(
         <div className='reg-background'>
         <div className='reg-inner'>
@@ -49,7 +57,7 @@ function Edit(props){
                     <h3>예문의미</h3>
                     <input onChange={onChange} name='exammean' value={getInputs.exammean} className='input-value' />
                 </div>
-                <button onClick={()=> { history.goBack(); }} className='submit-btn' type='submit'>저장하기</button>
+                <button onClick={()=> { history.goBack(); updateDic() }} className='submit-btn' type='submit'>저장하기</button>
         </div>
     </div>
     )
