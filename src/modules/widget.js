@@ -17,12 +17,10 @@ export function loadWidgets(dictionary) {
 }
 
 export function createWidget(widget) {
-    console.log(widget)
     return { type: CREATE, widget : widget };
 }
 
 export function updateWidget(widget) {
-    console.log(widget)
     return { type: UPDATE, widget };
 }
 
@@ -47,14 +45,12 @@ export const loadDictionary = () =>{
 export const addDictionary = (dic) =>{
     return async function(dispatch){
         const docRef = await addDoc(collection(db, 'dictionary'),dic);
-        console.log(docRef)
     }
 }
 
 export const updateDictionary = (dic) =>{
     return async function(dispatch){
         // const dic_data = await getDocs(collection(db, 'dictionary'));
-        console.log(dic)
         //console.log(dic_list[dic_list.length-1])
         const docRef = doc(db, 'dictionary', dic.id)
         
@@ -71,7 +67,7 @@ export const updateDictionary = (dic) =>{
 
 export const deleteDictionary = (dic_id)=>{ //id값
     return async function(dispatch){
-        const docRef = doc(db, 'dictionary'. dic_id)
+        const docRef = doc(db, 'dictionary', dic_id)
         await deleteDoc(docRef);
     }
 }
@@ -85,6 +81,7 @@ export const deleteDictionary = (dic_id)=>{ //id값
 export default function reducer(state = initialState, action = {}) { // state = {} : 디폴트값
     switch (action.type) {
         case "widget/LOAD" : {
+            console.log(action.dictionary)
             return {
                 list : action.dictionary
             }

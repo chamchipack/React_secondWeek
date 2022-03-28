@@ -8,7 +8,6 @@ function Edit(props){
     let dispatch = useDispatch();
     let history = useHistory();
     const data = useSelector((state)=> state.widget.list)
-    console.log(data)
     const dic_data = data[props.getCount]
 
     const [getInputs, setInputs] = useState({
@@ -32,7 +31,6 @@ function Edit(props){
     const updateDic = ()=>{
         dispatch(updateDictionary(getInputs))
     }
-    console.log(getInputs)
     return(
         <div className='reg-background'>
         <div className='reg-inner'>

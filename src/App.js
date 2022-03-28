@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react';
 import {Route, Link} from 'react-router-dom';
+import './App.css';
 import Main from './Main';
 import Register from './Register'
 import Edit from './Edit'
-import { useEffect, useState } from 'react';
-
-
+import styled from 'styled-components';
 
 function App() {
   let [getCount, setCount] = useState();
   let [getNowid, setNowid] = useState();
-  console.log(getCount)
 
   return (
-    <div className="background">
-      <div className='background-title'>
-        <h3 className='head-title'>중국어 단어장</h3>
-      </div>
+    <Background>
+      <TitleBox>
+        <h3 style={{textAlign : 'center'}}>중국어 단어장</h3>
+      </TitleBox>
           <Route exact path='/'>
             <Main setCount={setCount} getNowid={getNowid}></Main>
           </Route>
@@ -27,8 +24,21 @@ function App() {
           <Route exact path='/edit/:num'>
             <Edit getCount={getCount} setNowid={setNowid}></Edit>
           </Route>
-    </div>
+    </Background>
   );
 }
+
+const Background = styled.div`
+  margin: 0 auto;
+  width: 100%;
+  height: 1020px;
+`;
+
+const TitleBox = styled.div`
+  margin: 0 auto;
+  width: 100%;
+  height: 70px;
+  border-bottom: 3px solid rgb(192, 237, 192);
+`;
 
 export default App;
