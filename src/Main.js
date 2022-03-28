@@ -1,9 +1,9 @@
-import {react, useEffect} from 'react';
-import {Route, Link} from 'react-router-dom';
+import { useEffect} from 'react';
+import { Link} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadDictionary } from './modules/widget';
-import {db} from './firebase';
-import { collection, getDoc, getDocs, addDoc} from 'firebase/firestore';
+// import {db} from './firebase';
+// import { collection, getDoc, getDocs, addDoc} from 'firebase/firestore';
 import './Main.css'
 import Word from './Word'
 

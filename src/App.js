@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {Route, Link} from 'react-router-dom';
 import './App.css';
 import Main from './Main';
@@ -13,7 +13,7 @@ function App() {
   return (
     <Background>
       <TitleBox>
-        <h3 style={{textAlign : 'center'}}>중국어 단어장</h3>
+        <h2 style={{textAlign : 'center'}}>중국어 단어장</h2>
       </TitleBox>
           <Route exact path='/'>
             <Main setCount={setCount} getNowid={getNowid}></Main>

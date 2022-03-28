@@ -1,7 +1,9 @@
-import { react, useRef, useState } from 'react';
+import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
 import {updateDictionary} from './modules/widget'
+import {InputValue, InputDiv, Background, InnerBox} from './Register';
+
 
 function Edit(props){
     let setNowid = props.setNowid;
@@ -32,32 +34,32 @@ function Edit(props){
         dispatch(updateDictionary(getInputs))
     }
     return(
-        <div className='reg-background'>
-        <div className='reg-inner'>
+        <Background>
+            <InnerBox>
             <h2>단어 수정하기</h2>
-                <div className='input-div'>
+                <InputDiv>
                     <h3>단어</h3>
-                    <input onChange={onChange} name='word' value={getInputs.word} className='input-value' />
-                </div>
-                <div className='input-div'>
+                    <InputValue onChange={onChange} name='word' value={getInputs.word} />
+                </InputDiv>
+                <InputDiv>
                     <h3>병음</h3>
-                    <input onChange={onChange} name='pinyin' value={getInputs.pinyin} className='input-value' />
-                </div>
-                <div className='input-div'>
+                    <InputValue onChange={onChange} name='pinyin' value={getInputs.pinyin} />
+                </InputDiv>
+                <InputDiv>
                     <h3>의미</h3>
-                    <input onChange={onChange} name='mean' value={getInputs.mean} className='input-value' />
-                </div>
-                <div className='input-div'>
+                    <InputValue onChange={onChange} name='mean' value={getInputs.mean} />
+                </InputDiv>
+                <InputDiv>
                     <h3>예문</h3>
-                    <input onChange={onChange} name='example' value={getInputs.example} className='input-value' />
-                </div>
-                <div className='input-div'>
+                    <InputValue onChange={onChange} name='example' value={getInputs.example} />
+                </InputDiv>
+                <InputDiv>
                     <h3>예문의미</h3>
-                    <input onChange={onChange} name='exammean' value={getInputs.exammean} className='input-value' />
-                </div>
+                    <InputValue onChange={onChange} name='exammean' value={getInputs.exammean} />
+                </InputDiv>
                 <button onClick={()=> { history.goBack(); updateDic() }} className='submit-btn' type='submit'>저장하기</button>
-        </div>
-    </div>
+            </InnerBox>
+        </Background>
     )
 }
 export default Edit

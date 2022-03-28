@@ -1,13 +1,10 @@
-import {react, useState} from 'react';
+import { useState} from 'react';
 import { useHistory, Link } from 'react-router-dom';
-import {useSelector, useDispatch} from 'react-redux';
-import {deleteDictionary} from './modules/widget'
 import {FaCheckDouble} from 'react-icons/fa'
 import {FaPenSquare} from 'react-icons/fa'
 import {FaRegWindowClose} from 'react-icons/fa'
 
 function Word(props){
-    let dispatch = useDispatch();
     let history = useHistory();
     let [getCheck, setCheck] = useState(true);
     let setCount = props.setCount
